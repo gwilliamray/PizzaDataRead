@@ -13,8 +13,8 @@ namespace ReadPizzaInvoice
         {
             // connection string
             // remote
-            //string connectionString = @"Data Source=pizzaEmporium.db.2823567.hostedresource.com;Initial Catalog=pizzaEmporium;Persist Security Info=True;User ID=pizzaEmporium;Password=C#1434!spring";
-           string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=N:\1434\Spring2019TH\ReadPizzaData\PizzaEmporiumData\ReadPizzaInvoice\Invoices.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=pizzaEmporium.db.2823567.hostedresource.com;Initial Catalog=pizzaEmporium;Persist Security Info=True;User ID=pizzaEmporium;Password=C#1434!spring";
+           //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=N:\1434\Spring2019TH\ReadPizzaData\PizzaEmporiumData\ReadPizzaInvoice\Invoices.mdf;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connectionString);
 
             return conn;

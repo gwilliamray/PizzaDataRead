@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace ReadPizzaInvoice
 {
@@ -20,9 +22,22 @@ namespace ReadPizzaInvoice
         List<InvoiceData> invoices = new List<InvoiceData>();
         private void Form1_Load(object sender, EventArgs e)
         {
-            invoices = InvoiceDA.GetAllInvoices();
+            try
+            {
+                invoices = InvoiceDA.GetAllInvoices();
 
-            ShowAllInvoices();
+                ShowAllInvoices();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
 
         private void ShowAllInvoices()

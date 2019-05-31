@@ -16,12 +16,11 @@ namespace ReadPizzaInvoice
 
             SqlConnection conn = PizzaDB.GetPizzaConnection();
 
-            string selectString = "Select * from summerOrder ";
+            string selectString = "Select * from summerOrder Order by BranchName";
 
             SqlCommand selectCommand = new SqlCommand(selectString, conn);
 
-            try
-            {
+            
                 conn.Open();
 
                 SqlDataReader reader = selectCommand.ExecuteReader();
@@ -37,20 +36,8 @@ namespace ReadPizzaInvoice
                     allInvoice.Add(i);
 
                 }
-
-            }
-            catch(SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
                 conn.Close();
-            }
+           
 
             return allInvoice;
         }
