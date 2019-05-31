@@ -20,7 +20,8 @@ namespace ReadPizzaInvoice
 
             SqlCommand selectCommand = new SqlCommand(selectString, conn);
 
-            
+            // moved the try catch to the form
+
                 conn.Open();
 
                 SqlDataReader reader = selectCommand.ExecuteReader();
