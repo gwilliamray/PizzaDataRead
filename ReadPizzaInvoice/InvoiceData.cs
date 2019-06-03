@@ -10,7 +10,7 @@ namespace ReadPizzaInvoice
     {
         /*
          * This is a simalar class to the InvoiceItem class from the Pizza Emporium
-         * But, they are neither the same in structur or purpose
+         * But, they are neither the same in structure or purpose
          */
          
         public int Id { get; set; }

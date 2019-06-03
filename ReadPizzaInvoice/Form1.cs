@@ -24,6 +24,7 @@ namespace ReadPizzaInvoice
         {
             try
             {
+                pictureBox1.Image = Resource1.PizzaPic;
                 invoices = InvoiceDA.GetAllInvoices();
 
                 ShowAllInvoices();
